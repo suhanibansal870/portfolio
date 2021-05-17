@@ -1,3 +1,6 @@
+ul{
+    list-style:none;
+}
 #everything {
     color: whitesmoke;
     text-align: justify;
