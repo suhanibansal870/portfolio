@@ -25,10 +25,14 @@ body::-webkit-scrollbar {
 
     display: none;
 }
+#SeeMore{
+    width:450px;
+    height:150px;
+}
 
 img {
     width: 100%;
-    height: default;
+    height: 100%;
 }
 
 h1,
