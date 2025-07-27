@@ -539,11 +539,11 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     align-items: center;
     border-right: 1px solid #b2c1ce;
     overflow:hidden;
-    -webkit-transition:background 0.5s linear; 
+    /* -webkit-transition:background 0.5s linear; 
     -moz-transition:background 0.5s linear; 
     -ms-transition:background 0.5s linear; 
     -o-transition:background 0.5s linear; 
-    transition:background 0.5s linear;
+    transition:background 0.5s linear; */
     padding:10%;
 }
 .profile-icon-name {
@@ -555,7 +555,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 .profile-border {
     border-bottom: 1px solid #b2c1ce;
 }
-.single-profile-overlay{
+/* .single-profile-overlay{
     display:flex;
     align-items:center;
     text-transform: capitalize;
@@ -582,8 +582,8 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     -o-transition: .5s;
     transition: .5s;
     padding:10%;
-}
-.single-profile:hover .single-profile-overlay{
+} */
+/* .single-profile:hover .single-profile-overlay{
     -webkit-transform:scale(1);
     -moz-transform:scale(1);
     -ms-transform:scale(1);
@@ -592,7 +592,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     top:0;
 }
 .single-profile:hover .profile-icon-name,.single-profile:hover .profile-txt a>i{color: #fff;}
-.single-profile:hover .profile-border {border:transparent;}
+.single-profile:hover .profile-border {border:transparent;} */
 /*-------------------------------------
         9. Portfolio
 --------------------------------------*/
@@ -860,5 +860,9 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 .github-link:hover{
     text-decoration: underline;
 }
+ a[href="projects.html"]:hover {
+    background-color: #821eac;
+  }
 /*========================Thank you=================
+
 
