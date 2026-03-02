@@ -155,6 +155,140 @@
   font-size: 14px;
   color: #777;
 }
+/* =========================
+   STEM Projects (fixed)
+   ========================= */
+#stem-projects .projects-container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#stem-projects .projects-row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 28px;
+}
+
+#stem-projects .project-col{
+  flex: 1 1 calc(50% - 14px);
+  max-width: calc(50% - 14px);
+  min-width: 320px;
+}
+
+#stem-projects .project-card{
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#stem-projects .project-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+
+#stem-projects .project-preview{
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  background: #fafafa;
+}
+
+#stem-projects .project-body{
+  padding: 20px 22px 22px;
+}
+
+#stem-projects .meta-line{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+#stem-projects .year-badge{
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(170, 54, 212, 0.12);
+  color: rgb(120, 30, 170);
+}
+
+#stem-projects .project-title{
+  display: block;
+  margin: 6px 0 10px;
+  font-size: 18px;
+  font-weight: 750;
+  line-height: 1.25;
+  color: #111;
+  text-decoration: none;
+}
+
+#stem-projects .project-title:hover{
+  text-decoration: underline;
+}
+
+#stem-projects .project-summary{
+  margin: 0 0 12px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #444;
+}
+
+#stem-projects .link-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+#stem-projects .pill-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(0,0,0,0.12);
+  color: #222;
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+#stem-projects .pill-link:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  border-color: rgba(170, 54, 212, 0.35);
+}
+
+#stem-projects .pill-link.primary{
+  border-color: rgba(170, 54, 212, 0.35);
+  background: rgba(170, 54, 212, 0.08);
+  color: rgb(120, 30, 170);
+}
+
+@media (max-width: 991px){
+  #stem-projects .project-col{
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  #stem-projects .project-preview{
+    height: 280px;
+  }
+}
 
   </style>
 </link></head>
@@ -225,7 +359,10 @@
                 I am a sophomore at Design Tech High School. 
               </h3>
 <p>
-                Hi! I am Suhani Bansal, a sophomore who goes to Design Tech! I would describe myself as someone who is motivated, analytical, and empathetic. In this website, you will be able to find my key accomplishments and interests.
+                Hi, I’m Suhani Bansal, a sophomore at Design Tech High School interested in using computer science and biology to improve healthcare. I’m motivated, analytical, and empathetic, and I enjoy turning complex data into clear, useful insights.
+
+I work on research projects in genetics, machine learning, and antibiotic resistance, and I’ve presented my work at science fairs and conferences. I’m also involved in leadership and STEM extracurriculars.
+On this website, you’ll find my projects, accomplishments, and interests.
               </p>
 
 </div>
@@ -258,14 +395,14 @@
 </div>
 </div>
 </div><!-- /.barWrapper -->
-<div class="barWrapper">
+<!-- <div class="barWrapper">
 <span class="progressText">web-development</span>
 <div class="single-progress-txt">
 <div class="progress">
 <div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
 </div>
 </div>
-</div><!-- /.barWrapper -->
+</div>/.barWrapper -->
 <div class="barWrapper">
 <span class="progressText">public speaking + presenting</span>
 <div class="single-progress-txt">
@@ -273,15 +410,23 @@
 <div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
 </div>
 </div>
-</div><!-- /.barWrapper -->
 <div class="barWrapper">
-<span class="progressText">performing arts</span>
+<span class="progressText">design thinking</span>
 <div class="single-progress-txt">
 <div class="progress">
 <div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
 </div>
 </div>
 </div><!-- /.barWrapper -->
+</div><!-- /.barWrapper -->
+<!-- <div class="barWrapper">
+<span class="progressText">performing arts</span>
+<div class="single-progress-txt">
+<div class="progress">
+<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
+</div>
+</div>
+</div>/.barWrapper -->
 </div>
 </div>
 <div class="col-md-6">
@@ -310,14 +455,7 @@
 </div>
 </div>
 </div><!-- /.barWrapper -->
-<div class="barWrapper">
-<span class="progressText">design thinking</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div><!-- /.barWrapper -->
+
 </div>
 </div>
 </div><!-- /.row -->
@@ -331,22 +469,34 @@
 
 <section class="profiles" id="extracurriculars"><div class="profiles-details"><div class="section-heading text-center"><h2>Clubs &amp; Extracurriculars</h2></div><div class="container"><div class="profiles-content">
 <!-- Student Council Timeline -->
+<!-- Student Council Timeline -->
 <div class="timeline-wrapper">
-<h3>Student Council</h3>
-<div class="timeline-block">
-<div class="timeline-icon"><i class="fa fa-users"></i></div>
-<div class="timeline-content">
-<h4>Secretary</h4>
-<p>Apr 2025 – Present</p>
-</div>
-</div>
-<div class="timeline-block">
-<div class="timeline-icon"><i class="fa fa-users"></i></div>
-<div class="timeline-content">
-<h4>Representative</h4>
-<p>Mar 2025 – Apr 2025</p>
-</div>
-</div>
+  <h3>Student Council</h3>
+
+  <!-- NEW: Co-President -->
+  <div class="timeline-block">
+    <div class="timeline-icon"><i class="fa fa-users"></i></div>
+    <div class="timeline-content">
+      <h4>Co-President</h4>
+      <p>Jan 2026 – Present</p>
+    </div>
+  </div>
+
+  <div class="timeline-block">
+    <div class="timeline-icon"><i class="fa fa-users"></i></div>
+    <div class="timeline-content">
+      <h4>Secretary</h4>
+      <p>Apr 2025 – Jan 2026</p>
+    </div>
+  </div>
+
+  <div class="timeline-block">
+    <div class="timeline-icon"><i class="fa fa-users"></i></div>
+    <div class="timeline-content">
+      <h4>Representative</h4>
+      <p>Mar 2025 – Apr 2025</p>
+    </div>
+  </div>
 </div>
 <!-- Model United Nations Timeline -->
 <div class="timeline-wrapper">
@@ -427,6 +577,17 @@
         <div class="row">
 
           <div class="col-sm-3">
+  <div class="single-profile">
+    <div class="profile-txt">
+      <div class="profile-icon-name">
+          Selected for Publishing and Presenting Research
+         (IEEE CCWC, Feb 2026)
+      </div>
+    </div>
+  </div>
+</div>
+
+          <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
@@ -456,6 +617,17 @@
             </div>
           </div>
 
+          
+
+        </div><!-- /.row -->
+
+        <div class="profile-border"></div>
+
+        <!-- ===== Row 2 ===== -->
+
+        
+        <div class="row">
+
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
@@ -465,13 +637,6 @@
               </div>
             </div>
           </div>
-
-        </div><!-- /.row -->
-
-        <div class="profile-border"></div>
-
-        <!-- ===== Row 2 ===== -->
-        <div class="row">
 
           <div class="col-sm-3">
             <div class="single-profile">
@@ -503,7 +668,13 @@
             </div>
           </div>
 
-          <div class="col-sm-3">
+        </div><!-- /.row -->
+
+        <div class="profile-border"></div>
+
+        <!-- ===== Row 3 ===== -->
+        <div class="row">
+<div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
@@ -512,13 +683,6 @@
               </div>
             </div>
           </div>
-
-        </div><!-- /.row -->
-
-        <div class="profile-border"></div>
-
-        <!-- ===== Row 3 ===== -->
-        <div class="row">
 
           <div class="col-sm-3">
             <div class="single-profile profile-no-border">
@@ -530,7 +694,7 @@
             </div>
           </div>
 
-          <div class="col-sm-3">
+          <!-- <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
@@ -548,7 +712,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div><!-- /.row -->
 
@@ -557,99 +721,161 @@
   </div><!-- /.profiles-details -->
 </section>
 
-<section id="stem-projects" class="portfolio" style="padding: 50px 0; background: #ffffff;">
+<!-- Replace your current STEM Projects section with this upgraded version -->
+<section id="stem-projects" class="portfolio" style="padding: 70px 0; background: #ffffff;">
   <div class="portfolio-details">
-    
+
     <!-- Section Title -->
-    <div class="section-heading text-center" style="margin-bottom: 40px;">
-      <h2 style="font-size: 34px; margin-bottom: 10px; font-weight: 700;">STEM Projects</h2>
-      <p style="font-size: 16px; color: #555; max-width: 600px; margin: 0 auto; line-height: 1.5;">
+    <div class="section-heading text-center" style="margin-bottom: 42px;">
+      <h2 style="font-size: 36px; margin-bottom: 10px; font-weight: 800;">STEM Projects</h2>
+      <!-- <p style="font-size: 16px; color: #555; max-width: 720px; margin: 0 auto; line-height: 1.6;">
         All of these projects focus on solving problems related to human health.
-      </p>
+      </p> -->
     </div>
 
-    <div class="container" style="max-width: 1200px; margin: 0 auto;">
-      <div class="row" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
+    <div class="projects-container">
 
-        <!-- Project 1 -->
-        <div class="col-sm-4" style="flex: 1 1 350px; max-width: 360px;">
-          <div style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
-            
-            <!-- PDF Preview -->
-            <iframe src="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf"
-                    style="width: 100%; height: 260px; border: none; border-bottom: 1px solid #eee;"></iframe>
-            
-            <!-- Project Info -->
-            <div style="padding: 18px;">
-              <p style="margin: 0; font-size: 13px; color: #777;">2025</p>
-              <a href="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf" target="_blank"
-                 style="font-size: 17px; font-weight: 600; color: #000; text-decoration: none; display: block; margin: 8px 0;">
+      <!-- Row 1: 2026 + 2025 -->
+      <div class="projects-row">
+
+        <!-- Project 4 (2026) -->
+        <div class="project-col">
+          <div class="project-card">
+            <iframe class="project-preview" src="ML.pdf"></iframe>
+
+            <div class="project-body">
+              <div class="meta-line">
+                <span class="year-badge">2026</span>
+                <!-- <span class="tag">Machine Learning</span>
+                <span class="tag">MALDI-TOF MS</span>
+                <span class="tag">Antibiotic Resistance</span> -->
+              </div>
+
+              <a class="project-title" href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
+                A Machine Learning-Based Diagnostic Utility for Predicting Ertapenem Resistance in Klebsiella Pneumoniae Using MALDI-TOF MS Spectra
+              </a>
+
+              <p class="project-summary">
+                <strong>Summary:</strong> Built lightweight models using MALDI-TOF MS spectra to predict ertapenem resistance in <em>Klebsiella pneumoniae</em> quickly and accurately. Logistic Regression, MLP, and Random Forest achieved test accuracies of 86%, 84%, and 78%, supporting faster, targeted treatment decisions without slow or expensive genomic workflows.
+              </p>
+
+              <p class="project-summary">
+                <strong>Publication Link:</strong> </p>
+
+              <div class="link-row">
+                <!-- <a class="pill-link primary" href="Ertapenem_Resistance_MALDI_ML.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-file-pdf-o"></i> View PDF
+                </a> -->
+                <a class="pill-link" href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-external-link"></i> 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 1 (2025) -->
+        <div class="project-col">
+          <div class="project-card">
+            <iframe class="project-preview" src="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf"></iframe>
+
+            <div class="project-body">
+              <div class="meta-line">
+                <span class="year-badge">2025</span>
+                <!-- <span class="tag">Bioinformatics</span>
+                <span class="tag">Pharmacogenomics</span>
+                <span class="tag">CYP2C9</span> -->
+              </div>
+
+              <a class="project-title" href="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf" target="_blank" rel="noopener noreferrer">
                 Genetic and Bioinformatics Analysis of Celecoxib: A CYP2C9-Focused Study
               </a>
-              <p style="margin: 0 0 10px 0; font-size: 14px; color: #555;">
-                 <strong>Awards:</strong> 3rd Place ACSEF
+
+              <p class="project-summary">
+                <strong>Awards:</strong> 3rd Place ACSEF<br>
+                <strong>Summary:</strong> Investigated how CYP2C9*2 and CYP2C9*3 variants affect celecoxib metabolism, highlighting genotype-guided dosing to improve patient safety and outcomes.
               </p>
-              <p style="font-size: 13px; color: #444; line-height: 1.5; margin: 0;">
-                <strong>Summary:</strong> This study investigates how CYP2C9*2 and CYP2C9*3 polymorphisms affect Celecoxib metabolism, emphasizing genotype-based dosing to improve patient safety and therapeutic outcomes.
-              </p>
+
+              <div class="link-row">
+                <!-- <a class="pill-link primary" href="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-file-pdf-o"></i> View PDF
+                </a> -->
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="col-sm-4" style="flex: 1 1 350px; max-width: 360px;">
-          <div style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
-            
-            <!-- PDF Preview -->
-            <iframe src="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf"
-                    style="width: 100%; height: 260px; border: none; border-bottom: 1px solid #eee;"></iframe>
-            
-            <!-- Project Info -->
-            <div style="padding: 18px;">
-              <p style="margin: 0; font-size: 13px; color: #777;">2024</p>
-              <a href="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf" target="_blank"
-                 style="font-size: 17px; font-weight: 600; color: #000; text-decoration: none; display: block; margin: 8px 0;">
+      </div>
+
+      <!-- Row 2: 2024 + 2023 -->
+      <div class="projects-row" style="margin-top: 28px;">
+
+        <!-- Project 2 (2024) -->
+        <div class="project-col">
+          <div class="project-card">
+            <iframe class="project-preview" src="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf"></iframe>
+
+            <div class="project-body">
+              <div class="meta-line">
+                <span class="year-badge">2024</span>
+                <!-- <span class="tag">Sustainable Materials</span>
+                <span class="tag">Biopolymer</span>
+                <span class="tag">Textiles</span> -->
+              </div>
+
+              <a class="project-title" href="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf" target="_blank" rel="noopener noreferrer">
                 Sea to Style: Crafting Sustainable Seaweed Biofabrics
               </a>
-              <p style="margin: 0 0 10px 0; font-size: 14px; color: #555;">
-                 <strong>Awards:</strong> 2nd Place CSEF, 1st Place SMCOE STEM Fair
+
+              <p class="project-summary">
+                <strong>Awards:</strong> 2nd Place CSEF, 1st Place SMCOE STEM Fair<br>
+                <strong>Summary:</strong> Developed biodegradable seaweed-based fabrics to reduce toxic textile waste and improve environmental and human health impacts from conventional clothing production.
               </p>
-              <p style="font-size: 13px; color: #444; line-height: 1.5; margin: 0;">
-                <strong>Summary:</strong> Created biodegradable seaweed-based fabrics to reduce toxic textile waste and improve environmental and human health impacts of the clothing industry.
-              </p>
+
+              <div class="link-row">
+                <!-- <a class="pill-link primary" href="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-file-pdf-o"></i> View PDF
+                </a> -->
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="col-sm-4" style="flex: 1 1 350px; max-width: 360px;">
-          <div style="background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); display: flex; flex-direction: column;">
-            
-            <!-- PDF Preview -->
-            <iframe src="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf"
-                    style="width: 100%; height: 260px; border: none; border-bottom: 1px solid #eee;"></iframe>
-            
-            <!-- Project Info -->
-            <div style="padding: 18px;">
-              <p style="margin: 0; font-size: 13px; color: #777;">2023</p>
-              <a href="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf" target="_blank"
-                 style="font-size: 17px; font-weight: 600; color: #000; text-decoration: none; display: block; margin: 8px 0;">
+        <!-- Project 3 (2023) -->
+        <div class="project-col">
+          <div class="project-card">
+            <iframe class="project-preview" src="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf"></iframe>
+
+            <div class="project-body">
+              <div class="meta-line">
+                <span class="year-badge">2023</span>
+                <!-- <span class="tag">Health Tech</span>
+                <span class="tag">Radiation Safety</span>
+                <span class="tag">Consumer Devices</span> -->
+              </div>
+
+              <a class="project-title" href="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf" target="_blank" rel="noopener noreferrer">
                 The Shocking Truth About Smartphones and Internet Routers
               </a>
-              <p style="margin: 0 0 10px 0; font-size: 14px; color: #555;">
-                <strong>Awards:</strong> Top 300 Thermo Fisher JIC, 1st Place SMCOE STEM Fair
+
+              <p class="project-summary">
+                <strong>Awards:</strong> Top 300 Thermo Fisher JIC, 1st Place SMCOE STEM Fair<br>
+                <strong>Summary:</strong> Measured electromagnetic radiation from smartphones and routers to support safer device habits and reduce potential health risks.
               </p>
-              <p style="font-size: 13px; color: #444; line-height: 1.5; margin: 0;">
-                <strong>Summary:</strong> Measured electromagnetic radiation from smartphones and routers to raise awareness about safe device use and minimize health risks.
-              </p>
+
+              <div class="link-row">
+                <!-- <a class="pill-link primary" href="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="fa fa-file-pdf-o"></i> View PDF
+                </a> -->
+              </div>
             </div>
           </div>
         </div>
 
-      </div><!-- /.row -->
-    </div><!-- /.container -->
+      </div>
 
-  </div><!-- /.portfolio-details -->
+    </div>
+  </div>
 </section>
 
 
@@ -868,11 +1094,11 @@
 <!--footer-copyright start-->
 <footer class="footer-copyright" id="footer-copyright">
 <div class="container">
-<div class="hm-footer-copyright text-center">
+<!-- <div class="hm-footer-copyright text-center">
 <p>
           Inspired by <a href="https://www.themesine.com/">themesine</a>
-</p><!--/p-->
-</div><!--/.text-center-->
+</p>/p
+</div>/.text-center -->
 </div><!--/.container-->
 <div id="scroll-Top">
 <div class="return-to-top">
@@ -904,6 +1130,44 @@
 <!--Custom JS-->
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/script.js"></script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
 
