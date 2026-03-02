@@ -866,3 +866,137 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
 /*========================Thank you=================
 
 
+<!-- Add this CSS once (best place: inside your existing <style> in <head>) -->
+<style>
+  /* STEM Projects layout */
+  #stem-projects .projects-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+  #stem-projects .projects-row {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  /* Wider, nicer cards */
+  #stem-projects .project-col {
+    flex: 1 1 560px;
+    max-width: 680px;
+    min-width: 340px;
+  }
+  #stem-projects .project-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  #stem-projects .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  }
+
+  /* Preview */
+  #stem-projects .project-preview {
+    width: 100%;
+    height: 320px;
+    border: none;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    background: #fafafa;
+  }
+
+  /* Content */
+  #stem-projects .project-body {
+    padding: 20px 22px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #stem-projects .meta-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  #stem-projects .year-badge {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(170, 54, 212, 0.12);
+    color: rgb(120, 30, 170);
+  }
+  #stem-projects .tag {
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(0,0,0,0.06);
+    color: #333;
+    white-space: nowrap;
+  }
+  #stem-projects .project-title {
+    margin: 2px 0 0 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #111;
+    text-decoration: none;
+  }
+  #stem-projects .project-title:hover {
+    text-decoration: underline;
+  }
+
+  #stem-projects .project-summary {
+    margin: 0;
+    font-size: 13.5px;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  /* Links and buttons */
+  #stem-projects .link-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
+  #stem-projects .pill-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.12);
+    color: #222;
+    background: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  #stem-projects .pill-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+    border-color: rgba(170, 54, 212, 0.35);
+  }
+  #stem-projects .pill-link.primary {
+    border-color: rgba(170, 54, 212, 0.35);
+    background: rgba(170, 54, 212, 0.08);
+    color: rgb(120, 30, 170);
+  }
+
+  /* Small responsive tweak */
+  @media (max-width: 900px) {
+    #stem-projects .projects-row { justify-content: center; }
+    #stem-projects .project-col { flex: 1 1 100%; max-width: 720px; }
+    #stem-projects .project-preview { height: 280px; }
+  }
