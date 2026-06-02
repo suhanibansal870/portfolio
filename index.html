@@ -37,75 +37,34 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
 <style>
-    .single-profile:hover {
-      transform: scale(1.05);
-      transition: transform 0.3s ease-in-out;
-      box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    }
-    .timeline-wrapper {
-      position: relative;
-      margin-left: 20px;
-      padding-left: 30px;
-      border-left: 2px solid #ddd;
-      margin-bottom: 50px;
-    }
-    .timeline-block {
-      margin-bottom: 30px;
-      position: relative;
-    }
-    .timeline-icon {
-      position: absolute;
-      left: -23px;
-      top: 0;
-      background: #5bc0de;
-      color: white;
-      padding: 10px;
-      border-radius: 50%;
-      font-size: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 38px;
-      height: 38px;
-    }
-    .timeline-content {
-      background: #f7f7f7;
-      padding: 15px 20px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .timeline-content h4 {
-      margin-top: 0;
-      margin-bottom: 5px;
-      font-weight: 600;
-      font-size: 18px;
-      color: #333;
-    }
-    .timeline-content p {
-      margin: 0;
-      font-style: italic;
-      color: #666;
-      font-size: 14px;
-    }
-    /* Section heading */
-    .section-heading h2 {
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #222;
-    }
-    .section-heading p {
-      font-size: 16px;
-      color: #666;
-      margin-top: -5px;
-      margin-bottom: 40px;
-    }
-  
+/* === Awards cards === */
+.single-profile:hover {
+  transform: translateY(-3px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 6px 18px rgba(178,91,222,0.15);
+  border-color: rgba(178,91,222,0.35);
+}
+
+/* === Section headings === */
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+.section-heading p {
+  font-size: 16px;
+  color: #666;
+  margin-top: -5px;
+  margin-bottom: 40px;
+}
+
+/* === Timeline === */
 .timeline-wrapper {
   border-left: 3px solid #e0c7e8;
   padding-left: 25px;
   margin-left: 10px;
+  margin-bottom: 50px;
   position: relative;
 }
 .timeline-wrapper h3 {
@@ -141,7 +100,7 @@
 }
 .timeline-content:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(91, 192, 222, 0.2);
+  box-shadow: 0 5px 15px rgba(178, 91, 222, 0.2);
 }
 .timeline-content h4 {
   margin: 0 0 5px;
@@ -154,6 +113,26 @@
   font-style: italic;
   font-size: 14px;
   color: #777;
+}
+
+/* === STEM Projects section layout === */
+#stem-projects {
+  padding: 70px 0;
+}
+#stem-projects .section-heading {
+  margin-bottom: 42px;
+}
+#stem-projects .section-heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+#stem-projects .section-heading p {
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+#stem-projects .projects-row + .projects-row {
+  margin-top: 28px;
 }
 /* =========================
    STEM Projects (fixed)
@@ -230,7 +209,7 @@
   display: block;
   margin: 6px 0 10px;
   font-size: 18px;
-  font-weight: 750;
+  font-weight: 500;
   line-height: 1.25;
   color: #111;
   text-decoration: none;
@@ -290,6 +269,108 @@
   }
 }
 
+/* === Hero name accent === */
+.hero-name {
+  color: #c06fe8;
+  text-decoration: underline;
+  text-decoration-color: rgba(192, 111, 232, 0.45);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+
+/* === Hero aurora overlay === */
+.welcome-hero::before {
+  background: radial-gradient(ellipse at 20% 80%, rgba(80,200,180,0.18) 0%, transparent 50%),
+              radial-gradient(ellipse at 80% 20%, rgba(178,91,222,0.28) 0%, transparent 50%),
+              rgba(31,44,108,0.65) !important;
+}
+
+/* === Hero → About gradient divider === */
+.hero-divider {
+  height: 60px;
+  background: linear-gradient(to bottom, #1a1a2e, #ffffff);
+  margin: 0;
+  padding: 0;
+}
+
+/* === About headshot rounded rectangle === */
+.about-headshot {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 360px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 18px;
+  margin: 0 auto;
+  border: 3px solid rgba(178, 91, 222, 0.30);
+  box-shadow: 0 12px 40px rgba(178, 91, 222, 0.20);
+}
+
+/* === Purple token — applied consistently === */
+:root { --purple: #b25bde; --purple-light: rgba(178,91,222,0.12); --purple-border: rgba(178,91,222,0.30); }
+.timeline-icon { background: var(--purple) !important; }
+.skill-chip { background: var(--purple-light) !important; border: none !important; color: #6e19a0 !important; }
+.year-badge { background: var(--purple-light) !important; color: #6e19a0 !important; }
+#stem-projects .pill-link.primary { background: var(--purple-light) !important; border-color: var(--purple-border) !important; color: #6e19a0 !important; }
+.contact-icon-links { display: flex; gap: 14px; margin-top: 18px; }
+.contact-icon-links a { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border-radius: 50%; background: var(--purple-light); border: 1px solid var(--purple-border); color: var(--purple); font-size: 18px; text-decoration: none; transition: background 0.2s, transform 0.2s; }
+.contact-icon-links a:hover { background: rgba(178,91,222,0.25); transform: translateY(-2px); }
+
+/* === Skill chips === */
+.skill-chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding: 10px 0 30px;
+}
+.skill-chip {
+  display: inline-block;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(170, 54, 212, 0.10);
+  color: rgb(110, 25, 160);
+  border: 1px solid rgba(170, 54, 212, 0.25);
+  transition: background 0.2s, transform 0.2s;
+  cursor: default;
+}
+.skill-chip:hover {
+  background: rgba(170, 54, 212, 0.20);
+  transform: translateY(-2px);
+}
+
+/* === Alternating section backgrounds === */
+section.about { background: #ffffff; }
+section.profiles#extracurriculars { background: #f6f0fc; }
+section.profiles#accomplishments { background: #ffffff; }
+section#stem-projects { background: #f6f0fc !important; }
+section.skills { background: #ffffff; }
+section#contact { background: #f6f0fc; }
+
+/* === Mobile "show older" toggle === */
+.show-older-btn {
+  display: none;
+  margin: 4px 0 0 0;
+  background: none;
+  border: 1px solid rgba(170,54,212,0.35);
+  color: rgb(120,30,170);
+  border-radius: 999px;
+  padding: 5px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.show-older-btn:hover { background: rgba(170,54,212,0.08); }
+.timeline-older { display: block; }
+@media (max-width: 767px) {
+  .show-older-btn { display: inline-block; }
+  .timeline-older { display: none; }
+  .timeline-older.expanded { display: block; }
+}
+
   </style>
 </link></head>
 <body>
@@ -313,12 +394,13 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
 <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-<li class="smooth-menu"><a href="index.html">home</a></li>
-<li class="smooth-menu"><a href="#skills">skills</a></li>
-<li class="smooth-menu"><a href="#extracurriculars">clubs</a></li>
-<li class="smooth-menu"><a href="#accomplishments">accomplishments</a></li>
-<li class="smooth-menu"><a href="#stem-projects">stem projects</a></li>
-<li class="smooth-menu"><a href="#contact">contact</a></li>
+<li class="smooth-menu"><a href="#welcome-hero">Home</a></li>
+<li class="smooth-menu"><a href="#about">About</a></li>
+<li class="smooth-menu"><a href="#extracurriculars">Experience</a></li>
+<li class="smooth-menu"><a href="#accomplishments">Accomplishments</a></li>
+<li class="smooth-menu"><a href="#stem-projects">STEM Projects</a></li>
+<li class="smooth-menu"><a href="#skills">Skills</a></li>
+<li class="smooth-menu"><a href="#contact">Contact</a></li>
 
 
 </ul><!--/.nav -->
@@ -336,19 +418,19 @@
 <div class="row">
 <div class="col-md-12 text-center">
 <div class="header-text">
-<h2>hi <span>,</span> i am <br/> suhani <br/> bansal <span>.</span> </h2>
-<p>a sophomore at Design Tech High School </p>
-<a href="#about">Get started</a>
+<h2>hi, i'm <br/> <span class="hero-name">suhani bansal</span></h2>
+<p>a rising junior at Design Tech High School </p>
 </div><!--/.header-text-->
 </div><!--/.col-->
 </div><!-- /.row-->
 </div><!-- /.container-->
 </section><!--/.welcome-hero-->
 <!--welcome-hero end -->
+<div class="hero-divider"></div>
 <!--about start -->
 <section class="about" id="about">
 <div class="section-heading text-center">
-<h2>about me</h2>
+<h2>About Me</h2>
 </div>
 <div class="container">
 <div class="about-content" id="about">
@@ -356,20 +438,17 @@
 <div class="col-sm-6">
 <div class="single-about-txt">
 <h3>
-                I am a sophomore at Design Tech High School. 
+                I am a rising junior at Design Tech High School.
               </h3>
 <p>
-                Hi, I’m Suhani Bansal, a sophomore at Design Tech High School interested in using computer science and biology to improve healthcare. I’m motivated, analytical, and empathetic, and I enjoy turning complex data into clear, useful insights.
-
-I work on research projects in genetics, machine learning, and antibiotic resistance, and I’ve presented my work at science fairs and conferences. I’m also involved in leadership and STEM extracurriculars.
-On this website, you’ll find my projects, accomplishments, and interests.
+                I care deeply about using science and technology to make healthcare better. I’m also involved in leadership and STEM activities as Co-President of Student Council, Conference Director for Design Tech Model UN, Co-Chair of Girls Who Code, and the Secretary on the City of Redwood City Teen Advisory Board. I’ve presented research at science fairs, presented and published a paper at an IEEE conference, and chaired committees in Model UN. On this website, you’ll be able to see my projects, accomplishments, and interests.
               </p>
 
 </div>
 </div>
-<div class="col-sm-offset-1 col-sm-5">
+<div class="col-sm-6">
 <div>
-<img alt="profile_image" src="assets/images/about/sunset.png" style="height:75%; width:75%; padding-left:10%;"/>
+<img alt="profile_image" class="about-headshot" src="assets/images/about/Suhani_headshot.jpg"/>
 </div>
 </div>
 </div>
@@ -378,106 +457,18 @@ On this website, you’ll find my projects, accomplishments, and interests.
 </section><!--/.about-->
 <!--about end -->
 <!--skills start -->
-<section class="skills" id="skills">
-<div class="skill-content">
-<div class="section-heading text-center">
-<h2>Skills & Interests</h2>
-</div>
-<div class="container">
-<div class="row">
-<div class="col-md-6">
-<div class="single-skill-content">
-<div class="barWrapper">
-<span class="progressText">research + data collection</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div><!-- /.barWrapper -->
-<!-- <div class="barWrapper">
-<span class="progressText">web-development</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div>/.barWrapper -->
-<div class="barWrapper">
-<span class="progressText">public speaking + presenting</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-<div class="barWrapper">
-<span class="progressText">design thinking</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div><!-- /.barWrapper -->
-</div><!-- /.barWrapper -->
-<!-- <div class="barWrapper">
-<span class="progressText">performing arts</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div>/.barWrapper -->
-</div>
-</div>
-<div class="col-md-6">
-<div class="single-skill-content">
-<div class="barWrapper">
-<span class="progressText">computer science</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div><!-- /.barWrapper -->
-<div class="barWrapper">
-<span class="progressText">statistics</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div><!-- /.barWrapper -->
-<div class="barWrapper">
-<span class="progressText">bioinformatics</span>
-<div class="single-progress-txt">
-<div class="progress">
-<div aria-valuemax="100" aria-valuemin="10" aria-valuenow="100" class="progress-bar" role="progressbar" style=""></div>
-</div>
-</div>
-</div><!-- /.barWrapper -->
-
-</div>
-</div>
-</div><!-- /.row -->
-</div> <!-- /.container -->
-</div><!-- /.skill-content-->
-</section><!--/.skills-->
-<!--skills end -->
-<!--skills end -->
 <!-- Clubs & Extracurriculars Section Start -->
 
 
 <section class="profiles" id="extracurriculars"><div class="profiles-details"><div class="section-heading text-center"><h2>Clubs &amp; Extracurriculars</h2></div><div class="container"><div class="profiles-content">
-<!-- Student Council Timeline -->
-<!-- Student Council Timeline -->
+<!-- School Leadership Timeline -->
 <div class="timeline-wrapper">
-  <h3>Student Council</h3>
+  <h3>School Leadership</h3>
 
-  <!-- NEW: Co-President -->
   <div class="timeline-block">
     <div class="timeline-icon"><i class="fa fa-users"></i></div>
     <div class="timeline-content">
-      <h4>Co-President</h4>
+      <h4>Student Council Co-President</h4>
       <p>Jan 2026 – Present</p>
     </div>
   </div>
@@ -485,62 +476,79 @@ On this website, you’ll find my projects, accomplishments, and interests.
   <div class="timeline-block">
     <div class="timeline-icon"><i class="fa fa-users"></i></div>
     <div class="timeline-content">
-      <h4>Secretary</h4>
-      <p>Apr 2025 – Jan 2026</p>
+      <h4>School Director Advisory Committee Representative</h4>
+      <p>Oct 2025 – Present</p>
     </div>
   </div>
-
-  <div class="timeline-block">
-    <div class="timeline-icon"><i class="fa fa-users"></i></div>
-    <div class="timeline-content">
-      <h4>Representative</h4>
-      <p>Mar 2025 – Apr 2025</p>
+  <div class="timeline-older">
+    <div class="timeline-block">
+      <div class="timeline-icon"><i class="fa fa-users"></i></div>
+      <div class="timeline-content">
+        <h4>Student Council Secretary and Representative</h4>
+        <p>Mar 2025 – Jan 2026</p>
+      </div>
     </div>
   </div>
+  <button class="show-older-btn" onclick="toggleOlder(this)">Show older roles</button>
 </div>
 <!-- Model United Nations Timeline -->
 <div class="timeline-wrapper">
-<h3>Model United Nations</h3>
+<h3>Design Tech Model UN</h3>
+<div class="timeline-block">
+<div class="timeline-icon"><i class="fa fa-globe"></i></div>
+<div class="timeline-content">
+<h4>Head Delegate and Conference Director</h4>
+<p>May 2026 – Present</p>
+</div>
+</div>
+<div class="timeline-block">
+<div class="timeline-icon"><i class="fa fa-globe"></i></div>
+<div class="timeline-content">
+<h4><a href="https://sites.google.com/dtechhs.org/dmun/committees/iaea?authuser=0" target="_blank" style="text-decoration: underline; color:rgb(170, 54, 212)">International Atomic Energy Agency Committee</a> Co-Chair (d.mun IV)</h4>
+<p>May 2026 – Present</p>
+</div>
+</div>
+<div class="timeline-older">
 <div class="timeline-block">
 <div class="timeline-icon"><i class="fa fa-globe"></i></div>
 <div class="timeline-content">
 <h4>Conference Innovation Committee (d.mun III)</h4>
-<p>May 2025 – Present</p>
+<p>May 2025 – May 2026</p>
 </div>
 </div>
 <div class="timeline-block">
 <div class="timeline-icon"><i class="fa fa-globe"></i></div>
 <div class="timeline-content">
-<a  href = "https://sites.google.com/dtechhs.org/dmun/committees/sochum?authuser=0" target = "_blank" id ="d.munIIISOCHUM" style = "text-decoration: underline; color:rgb(170, 54, 212)">Chair – Gender Equality in STEM Fields - SOCHUM Committee (d.mun III)</a>
-<p>May 2025 – Present</p>
+<h4>Social, Humanitarian, and Cultural Committee Co-Chair (d.mun III)</h4>
+<p>May 2025 – Feb 2026</p>
 </div>
 </div>
 <div class="timeline-block">
 <div class="timeline-icon"><i class="fa fa-globe"></i></div>
 <div class="timeline-content">
 <h4>Delegate</h4>
-<p>Aug 2024 – Present</p>
+<p>Aug 2024 – Jun 2026</p>
 </div>
 </div>
 <div class="timeline-block">
 <div class="timeline-icon"><i class="fa fa-globe"></i></div>
 <div class="timeline-content">
-<h4> Secretariat (d.mun II)</h4>
+<h4>Secretariat (d.mun II)</h4>
 <p>Aug 2024 – May 2025</p>
 </div>
 </div>
 </div>
-<!-- Girls Who Code Timeline -->
+<button class="show-older-btn" onclick="toggleOlder(this)">Show older roles</button>
+</div>
 <!-- Girls Who Code Timeline -->
 <div class="timeline-wrapper">
 <h3>Girls Who Code</h3>
 
-<!-- NEW: Club Chair role added (started this month) -->
 <div class="timeline-block">
   <div class="timeline-icon"><i class="fa fa-code"></i></div>
   <div class="timeline-content">
-    <h4>Club Chair</h4>
-    <p>Aug 2025 – Present</p>
+    <h4>Co-Chair</h4>
+    <p>Sep 2025 – Present</p>
   </div>
 </div>
 
@@ -548,21 +556,31 @@ On this website, you’ll find my projects, accomplishments, and interests.
 <div class="timeline-icon"><i class="fa fa-code"></i></div>
 <div class="timeline-content">
 <h4>Member</h4>
-<p>Sep 2025 – Present</p>
+<p>Aug 2024 – Sep 2025</p>
 </div>
 </div>
 </div>
 <!-- Redwood City Teen Advisory Board Timeline -->
-<!-- <div class="timeline-wrapper">
-<h3>Redwood City Teen Advisory Board</h3>
+<div class="timeline-wrapper">
+<h3>City of Redwood City</h3>
 <div class="timeline-block">
-<div class="timeline-icon"><i class="fa fa-city"></i></div>
+<div class="timeline-icon"><i class="fa fa-building"></i></div>
 <div class="timeline-content">
-<h4>Secretary</h4>
+<h4>Teen Advisory Board Secretary</h4>
 <p>Sep 2024 – Present</p>
 </div>
 </div>
-</div> -->
+<div class="timeline-older">
+<div class="timeline-block">
+<div class="timeline-icon"><i class="fa fa-building"></i></div>
+<div class="timeline-content">
+<h4>Youth Advisory Board Vice Chair</h4>
+<p>Sep 2023 – Sep 2024</p>
+</div>
+</div>
+</div>
+<button class="show-older-btn" onclick="toggleOlder(this)">Show older roles</button>
+</div>
 </div></div></div></section>
 <section class="profiles" id="accomplishments">
    <div class="profiles-details">
@@ -573,147 +591,143 @@ On this website, you’ll find my projects, accomplishments, and interests.
     <div class="container">
       <div class="profiles-content">
 
-        <!-- ===== Row 1 ===== -->
+        <!-- ===== Row 1: 2026 ===== -->
         <div class="row">
-
-          <div class="col-sm-3">
-  <div class="single-profile">
-    <div class="profile-txt">
-      <div class="profile-icon-name">
-          Selected for Publishing and Presenting Research
-         (IEEE CCWC, Feb 2026)
-      </div>
-    </div>
-  </div>
-</div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  Honorable Mention – SMUNC (Stanford Model United Nations, Nov 2025)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2026</span><br/>First Place, Biological Sciences, Golden Gate STEM Fair
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  Honorable Mention – GMUNC (Gunn Model United Nations, Oct 2025)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2026</span><br/>Selected for Publishing and Presenting Research, IEEE CCWC
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  Research Award – FHSMUNC (Foothill Model United Nations, Apr 2025)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Honorable Mention, Stanford Model United Nations
                 </div>
               </div>
             </div>
           </div>
-
-          
-
+          <div class="col-sm-3">
+            <div class="single-profile">
+              <div class="profile-txt">
+                <div class="profile-icon-name">
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Honorable Mention, Gunn Model United Nations
+                </div>
+              </div>
+            </div>
+          </div>
         </div><!-- /.row -->
 
         <div class="profile-border"></div>
 
-        <!-- ===== Row 2 ===== -->
-
-        
+        <!-- ===== Row 2: 2025 ===== -->
         <div class="row">
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  Third Place – ACSEF (Alameda County Science and Engineering Fair, Mar 2025)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Research Award, Foothill Model United Nations
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  2nd Place, Materials Science – CSEF (California Science and Engineering Fair, Apr 2024)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Third Place, Bioinformatics, Alameda County Science and Engineering Fair
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  1st Place, Materials Science – SMCOE STEM Fair (Mar 2024)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Leadership Award, Design Tech High School
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  Top 10% in Middle School STEM Fair Projects (Mar 2024, Mar 2023)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2024</span><br/>Outstanding Math Student, Carlmont High School
                 </div>
               </div>
             </div>
           </div>
-
         </div><!-- /.row -->
 
         <div class="profile-border"></div>
 
-        <!-- ===== Row 3 ===== -->
+        <!-- ===== Row 3: 2024 ===== -->
         <div class="row">
-<div class="col-sm-3">
-            <div class="single-profile">
-              <div class="profile-txt">
-                <div class="profile-icon-name">
-                  Top 300, Thermo Fisher Scientific Junior Innovators Challenge (Sep 2023)
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="single-profile profile-no-border">
-              <div class="profile-txt">
-                <div class="profile-icon-name">
-                  1st Place, Physics – SMCOE STEM Fair (Mar 2023)
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- <div class="col-sm-3">
-            <div class="single-profile">
-              <div class="profile-txt">
-                <div class="profile-icon-name">
-                  Outstanding Math Student – Carlmont High School (May 2024)
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
-                  Leadership Award – Design Tech High School (Jun 2025)
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2024</span><br/>Second Place, California Science and Engineering Fair
                 </div>
               </div>
             </div>
-          </div> -->
+          </div>
+          <div class="col-sm-3">
+            <div class="single-profile">
+              <div class="profile-txt">
+                <div class="profile-icon-name">
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2024</span><br/>First Place, Materials Science, SMCOE STEM Fair
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="single-profile">
+              <div class="profile-txt">
+                <div class="profile-icon-name">
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2024</span><br/>Top 10% in Middle School STEM Fair Projects
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="single-profile">
+              <div class="profile-txt">
+                <div class="profile-icon-name">
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2023</span><br/>Top 300, Thermo Fisher Scientific Junior Innovators Challenge
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.row -->
 
+        <div class="profile-border"></div>
+
+        <!-- ===== Row 4: 2023 ===== -->
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="single-profile">
+              <div class="profile-txt">
+                <div class="profile-icon-name">
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2023</span><br/>First Place, Physics, SMCOE STEM Fair
+                </div>
+              </div>
+            </div>
+          </div>
         </div><!-- /.row -->
 
       </div><!-- /.profiles-content -->
@@ -722,15 +736,13 @@ On this website, you’ll find my projects, accomplishments, and interests.
 </section>
 
 <!-- Replace your current STEM Projects section with this upgraded version -->
-<section id="stem-projects" class="portfolio" style="padding: 70px 0; background: #ffffff;">
+<section id="stem-projects" class="portfolio">
   <div class="portfolio-details">
 
     <!-- Section Title -->
-    <div class="section-heading text-center" style="margin-bottom: 42px;">
-      <h2 style="font-size: 36px; margin-bottom: 10px; font-weight: 800;">STEM Projects</h2>
-      <!-- <p style="font-size: 16px; color: #555; max-width: 720px; margin: 0 auto; line-height: 1.6;">
-        All of these projects focus on solving problems related to human health.
-      </p> -->
+    <div class="section-heading text-center">
+      <h2>STEM Projects</h2>
+      <p>All of these projects are focused on improving human health.</p>
     </div>
 
     <div class="projects-container">
@@ -741,14 +753,11 @@ On this website, you’ll find my projects, accomplishments, and interests.
         <!-- Project 4 (2026) -->
         <div class="project-col">
           <div class="project-card">
-            <iframe class="project-preview" src="ml.png"></iframe>
+            <iframe class="project-preview" src="ieee_ertapenem_ml.pdf"></iframe>
 
             <div class="project-body">
               <div class="meta-line">
                 <span class="year-badge">2026</span>
-                <!-- <span class="tag">Machine Learning</span>
-                <span class="tag">MALDI-TOF MS</span>
-                <span class="tag">Antibiotic Resistance</span> -->
               </div>
 
               <a class="project-title" href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
@@ -756,18 +765,16 @@ On this website, you’ll find my projects, accomplishments, and interests.
               </a>
 
               <p class="project-summary">
+                <strong>Awards:</strong> Selected for Publishing and Presenting, IEEE CCWC (Jan 2026); Qualified to California (State) Science and Engineering Fair; 1st Place Golden Gate STEM Fair<br>
                 <strong>Summary:</strong> Built lightweight models using MALDI-TOF MS spectra to predict ertapenem resistance in <em>Klebsiella pneumoniae</em> quickly and accurately. Logistic Regression, MLP, and Random Forest achieved test accuracies of 86%, 84%, and 78%, supporting faster, targeted treatment decisions without slow or expensive genomic workflows.
               </p>
 
-              <p class="project-summary">
-                <strong>Publication Link:</strong> </p>
-
               <div class="link-row">
-                <!-- <a class="pill-link primary" href="Ertapenem_Resistance_MALDI_ML.pdf" target="_blank" rel="noopener noreferrer">
+                <a class="pill-link primary" href="ieee_ertapenem_ml.pdf" target="_blank" rel="noopener noreferrer">
                   <i class="fa fa-file-pdf-o"></i> View PDF
-                </a> -->
+                </a>
                 <a class="pill-link" href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-external-link"></i> 
+                  <i class="fa fa-external-link"></i> IEEE Publication
                 </a>
               </div>
             </div>
@@ -792,7 +799,7 @@ On this website, you’ll find my projects, accomplishments, and interests.
               </a>
 
               <p class="project-summary">
-                <strong>Awards:</strong> 3rd Place ACSEF<br>
+                <strong>Awards:</strong> 3rd Place Alameda County Science and Engineering Fair<br>
                 <strong>Summary:</strong> Investigated how CYP2C9*2 and CYP2C9*3 variants affect celecoxib metabolism, highlighting genotype-guided dosing to improve patient safety and outcomes.
               </p>
 
@@ -808,7 +815,7 @@ On this website, you’ll find my projects, accomplishments, and interests.
       </div>
 
       <!-- Row 2: 2024 + 2023 -->
-      <div class="projects-row" style="margin-top: 28px;">
+      <div class="projects-row">
 
         <!-- Project 2 (2024) -->
         <div class="project-col">
@@ -859,7 +866,7 @@ On this website, you’ll find my projects, accomplishments, and interests.
               </a>
 
               <p class="project-summary">
-                <strong>Awards:</strong> Top 300 Thermo Fisher JIC, 1st Place SMCOE STEM Fair<br>
+                <strong>Awards:</strong> Top 300 Thermo Fisher Scientific JIC, 1st Place SMCOE STEM Fair<br>
                 <strong>Summary:</strong> Measured electromagnetic radiation from smartphones and routers to support safer device habits and reduce potential health risks.
               </p>
 
@@ -997,9 +1004,36 @@ On this website, you’ll find my projects, accomplishments, and interests.
 
 <!-- STEM PROJECTS SECTION END -->
 
+<section class="skills" id="skills">
+<div class="skill-content">
+<div class="section-heading text-center">
+<h2>Skills & Interests</h2>
+</div>
+<div class="container">
+<div class="skill-chips-wrap">
+  <span class="skill-chip">Research &amp; Data Collection</span>
+  <span class="skill-chip">Public Speaking</span>
+  <span class="skill-chip">Design Thinking</span>
+  <span class="skill-chip">Computer Science</span>
+  <span class="skill-chip">Python</span>
+  <span class="skill-chip">Machine Learning</span>
+  <span class="skill-chip">Bioinformatics</span>
+  <span class="skill-chip">Statistics</span>
+  <span class="skill-chip">HTML &amp; CSS</span>
+  <span class="skill-chip">Data Analysis</span>
+  <span class="skill-chip">Leadership</span>
+  <span class="skill-chip">Facilitation</span>
+  <span class="skill-chip">Communication</span>
+  <span class="skill-chip">Note Taking</span>
+  <span class="skill-chip">Presentation Skills</span>
+</div>
+</div>
+</div><!-- /.skill-content-->
+</section><!--/.skills-->
+
 		<section id="contact" class="contact">
 			<div class="section-heading text-center">
-				<h2>contact me</h2>
+				<h2>Contact Me</h2>
 			</div>
 			<div class="container">
 				<div class="contact-content">
@@ -1007,16 +1041,26 @@ On this website, you’ll find my projects, accomplishments, and interests.
 						<div class="col-md-offset-1 col-md-5 col-sm-6">
 							<div class="single-contact-box">
 								<div class="contact-form">
-									<form>
+									<div id="form-success" style="display:none; padding:32px 24px; background:rgba(178,91,222,0.08); border:1px solid rgba(178,91,222,0.30); border-radius:12px; color:#6e19a0; text-align:center;">
+										<div style="font-size:36px; margin-bottom:12px;">✓</div>
+										<p style="font-size:18px; font-weight:600; margin:0 0 6px;">Your message was sent!</p>
+										<p style="font-size:14px; color:#888; margin:0 0 18px;">Thanks for reaching out. I'll get back to you soon.</p>
+										<button id="form-reset-btn" type="button" style="background:none; border:1px solid rgba(178,91,222,0.4); color:#6e19a0; border-radius:999px; padding:7px 20px; font-size:13px; cursor:pointer;">Send another message</button>
+									</div>
+									<div data-fs-error style="display:none; padding:12px 16px; background:rgba(220,53,69,0.07); border:1px solid rgba(220,53,69,0.25); border-radius:8px; color:#b02a37; margin-bottom:16px; font-size:14px;"></div>
+
+									<form id="contact-form">
 										<div class="row">
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
 													<input type="text" class="form-control" id="name" placeholder="Name*" name="name">
+													<span data-fs-error="name" style="color:#b02a37; font-size:12px;"></span>
 												</div>
 											</div>
 											<div class="col-sm-6 col-xs-12">
 												<div class="form-group">
 													<input type="email" class="form-control" id="email" placeholder="Email*" name="email">
+													<span data-fs-error="email" style="color:#b02a37; font-size:12px;"></span>
 												</div>
 											</div>
 										</div>
@@ -1030,14 +1074,15 @@ On this website, you’ll find my projects, accomplishments, and interests.
 										<div class="row">
 											<div class="col-sm-12">
 												<div class="form-group">
-													<textarea class="form-control" rows="8" id="comment" placeholder="Message"></textarea>
+													<textarea class="form-control" rows="4" id="comment" name="message" placeholder="Message"></textarea>
+													<span data-fs-error="message" style="color:#b02a37; font-size:12px;"></span>
 												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-12">
-												<div class="single-contact-btn" onclick="SendMail()">
-													<button class="contact-btn" onclick="SendMail()" type="button">Submit</button>
+												<div class="single-contact-btn">
+													<button class="contact-btn" type="submit">Submit</button>
 												</div>
 											</div>
 										</div><!--/.row-->
@@ -1052,7 +1097,7 @@ On this website, you’ll find my projects, accomplishments, and interests.
 								<div class="contact-adress">
 									<div class="contact-add-head">
 										<h3>Suhani Bansal</h3>
-										<p>Student at Design Tech School</p>
+										<p>Rising Junior, Design Tech High School</p>
 									</div>
 									<div class="contact-add-info">
 										<!-- <div class="single-contact-add-info">
@@ -1071,18 +1116,17 @@ On this website, you’ll find my projects, accomplishments, and interests.
 											<h3>GitHub</h3>
 											<a href="https://github.com/suhanibansal870/" target="_blank"><p class="github-link">https://github.com/suhanibansal870/</p></a>
 										</div>
+										<div class="single-contact-add-info">
+											<h3>LinkedIn</h3>
+											<a href="https://www.linkedin.com/in/suhanibansal8/" target="_blank"><p class="github-link">linkedin.com/in/suhanibansal8</p></a>
+										</div>
 									</div>
 								</div><!--/.contact-adress-->
-								<div class="hm-foot-icon">
-									<ul>
-										<!-- <li><a href="#"><i class="fa fa-facebook"></i></a></li>/li -->
-										<!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li>/li -->
-										<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li>/li -->
-										<!-- <li><a target = "_blank" href="https://www.linkedin.com/in/suhanibansal633/"><i class="fa fa-linkedin"></i></a></li> -->
-										<!-- <li><a target = "_blank" href="https://github.com/suhanibansal870/"><i class="fa fa-brands fa-github"></i></a></li> -->
-										<!-- <li><a href="#"><i class="fa fa-instagram"></i></a></li>/li -->
-									</ul><!--/ul-->
-								</div><!--/.hm-foot-icon-->
+								<div class="contact-icon-links">
+									<a href="mailto:suhanibansal633@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
+									<a href="https://www.linkedin.com/in/suhanibansal8/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+									<a href="https://github.com/suhanibansal870/" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+								</div>
 							</div><!--/.single-contact-box-->
 						</div><!--/.col-->
 					</div><!--/.row-->
@@ -1094,11 +1138,9 @@ On this website, you’ll find my projects, accomplishments, and interests.
 <!--footer-copyright start-->
 <footer class="footer-copyright" id="footer-copyright">
 <div class="container">
-<!-- <div class="hm-footer-copyright text-center">
-<p>
-          Inspired by <a href="https://www.themesine.com/">themesine</a>
-</p>/p
-</div>/.text-center -->
+  <div class="hm-footer-copyright text-center" style="padding: 20px 0; font-size: 14px; color: #888;">
+    <p>© 2026 Suhani Bansal</p>
+  </div>
 </div><!--/.container-->
 <div id="scroll-Top">
 <div class="return-to-top">
@@ -1130,6 +1172,51 @@ On this website, you’ll find my projects, accomplishments, and interests.
 <!--Custom JS-->
 <script src="assets/js/custom.js"></script>
 <script src="assets/js/script.js"></script>
+<!-- Formspree jQuery submission -->
+<script>
+  $(document).ready(function () {
+    var $form = $('#contact-form');
+    var $btn = $form.find('[type="submit"]');
+    var $success = $('#form-success');
+    var $error = $('[data-fs-error]');
+
+    $('#contact-form').on('submit', function (e) {
+      e.preventDefault();
+      $btn.prop('disabled', true).text('Sending...');
+
+      $.ajax({
+        url: 'https://formspree.io/f/xnjjvwnz',
+        method: 'POST',
+        data: $form.serialize(),
+        dataType: 'json',
+        success: function () {
+          $form.hide();
+          $error.hide();
+          $success.show();
+        },
+        error: function () {
+          $error.text('Something went wrong. Please email me directly at suhanibansal633@gmail.com.').show();
+          $btn.prop('disabled', false).text('Submit');
+        }
+      });
+    });
+
+    $('#form-reset-btn').on('click', function () {
+      $form[0].reset();
+      $btn.prop('disabled', false).text('Submit');
+      $success.hide();
+      $error.hide().text('');
+      $form.show();
+    });
+  });
+</script>
+<script>
+function toggleOlder(btn) {
+  var older = btn.previousElementSibling;
+  var expanded = older.classList.toggle('expanded');
+  btn.textContent = expanded ? 'Show less' : 'Show older roles';
+}
+</script>
 <!-- Code injected by live-server -->
 <script>
 	// <![CDATA[  <-- For SVG support
