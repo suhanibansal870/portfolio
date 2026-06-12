@@ -135,147 +135,180 @@
   margin-top: 28px;
 }
 /* =========================
-   STEM Projects (fixed)
+   STEM Projects — card grid
    ========================= */
-#stem-projects .projects-container{
-  max-width: 1400px;
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 40px 48px;
 }
-
-#stem-projects .projects-row{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 28px;
+@media (max-width: 840px) {
+  .sp-grid { grid-template-columns: 1fr; }
 }
-
-#stem-projects .project-col{
-  flex: 1 1 calc(50% - 14px);
-  max-width: calc(50% - 14px);
-  min-width: 320px;
-}
-
-#stem-projects .project-card{
+.sp-card {
   background: #fff;
-  border-radius: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.10);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  padding: 30px 30px 26px;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 14px;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-
-#stem-projects .project-card:hover{
+.sp-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
 }
-
-#stem-projects .project-preview{
-  width: 100%;
-  height: 320px;
-  border: 0;
-  border-bottom: 1px solid rgba(0,0,0,0.07);
-  background: #fafafa;
-}
-
-#stem-projects .project-body{
-  padding: 20px 22px 22px;
-}
-
-#stem-projects .meta-line{
+.sp-header {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 8px;
+  align-items: flex-start;
+  gap: 14px;
 }
 
-#stem-projects .year-badge{
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  text-transform: uppercase;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(170, 54, 212, 0.12);
-  color: rgb(120, 30, 170);
-}
-
-#stem-projects .project-title{
-  display: block;
-  margin: 6px 0 10px;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.25;
-  color: #111;
-  text-decoration: none;
-}
-
-#stem-projects .project-title:hover{
-  text-decoration: underline;
-}
-
-#stem-projects .project-summary{
-  margin: 0 0 12px;
-  font-size: 13.5px;
-  line-height: 1.6;
-  color: #444;
-}
-
-#stem-projects .link-row{
+.sp-meta {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-#stem-projects .pill-link{
-  display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+.sp-dates {
   font-size: 13px;
-  padding: 8px 12px;
-  border-radius: 10px;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sp-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--purple-light);
+  color: #6e19a0;
+  border: 1px solid var(--purple-border);
+}
+.sp-badge-multi {
+  font-size: 10px;
+  letter-spacing: 0.2px;
+}
+.sp-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+.sp-title a {
+  color: inherit;
+  text-decoration: none;
+}
+.sp-title a:hover {
+  text-decoration: underline;
+  color: var(--purple);
+}
+.sp-subtitle {
+  font-size: 13.5px;
+  color: #666;
+  margin: 0;
+}
+.sp-bullets {
+  margin: 8px 0 0 0;
+  padding-left: 22px;
+  color: #444;
+  font-size: 13.5px;
+  line-height: 1.9;
+  list-style: disc !important;
+  padding-left: 22px !important;
+}
+.sp-bullets li {
+  list-style: disc !important;
+  list-style-type: disc !important;
+}
+.sp-bullets li {
+  margin-bottom: 7px;
+  padding-left: 4px;
+  list-style: disc !important;
+  list-style-type: disc !important;
+}
+.sp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 6px;
+}
+.sp-tags span {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f4f4f6;
+  color: #555;
+  border: 1px solid #e0e0e6;
+}
+.sp-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.sp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  padding: 7px 13px;
+  border-radius: 8px;
   text-decoration: none;
   border: 1px solid rgba(0,0,0,0.12);
-  color: #222;
+  color: #333;
   background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
-
-#stem-projects .pill-link:hover{
+.sp-link:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-  border-color: rgba(170, 54, 212, 0.35);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  border-color: var(--purple-border);
+}
+.sp-link.primary {
+  background: var(--purple-light);
+  border-color: var(--purple-border);
+  color: #6e19a0;
+}
+.sp-toggle {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: var(--purple);
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  margin-top: -4px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(178,91,222,0.4);
+}
+.sp-toggle:hover {
+  color: #6e19a0;
+}
+.sp-win {
+  font-weight: 700;
+  color: #333;
 }
 
-#stem-projects .pill-link.primary{
-  border-color: rgba(170, 54, 212, 0.35);
-  background: rgba(170, 54, 212, 0.08);
-  color: rgb(120, 30, 170);
-}
 
-@media (max-width: 991px){
-  #stem-projects .project-col{
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  #stem-projects .project-preview{
-    height: 280px;
-  }
-}
 
 /* === Hero name accent === */
 .hero-name {
-  color: #c06fe8;
-  text-decoration: underline;
-  text-decoration-color: rgba(192, 111, 232, 0.45);
-  text-underline-offset: 6px;
-  text-decoration-thickness: 3px;
+  color: #e8c7f7;
+  text-decoration: none;
 }
 
 /* === Hero aurora overlay === */
@@ -310,6 +343,30 @@
 /* === Purple token — applied consistently === */
 :root { --purple: #b25bde; --purple-light: rgba(178,91,222,0.12); --purple-border: rgba(178,91,222,0.30); }
 .timeline-icon { background: var(--purple) !important; }
+.currently-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 36px 0;
+}
+.currently-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #999;
+  margin-right: 4px;
+}
+.currently-chip {
+  font-size: 13.5px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: var(--purple-light);
+  border: 1px solid var(--purple-border);
+  color: #5a1080;
+  font-weight: 500;
+}
 .skill-chip { background: var(--purple-light) !important; border: none !important; color: #6e19a0 !important; }
 .year-badge { background: var(--purple-light) !important; color: #6e19a0 !important; }
 #stem-projects .pill-link.primary { background: var(--purple-light) !important; border-color: var(--purple-border) !important; color: #6e19a0 !important; }
@@ -345,10 +402,10 @@
 /* === Alternating section backgrounds === */
 section.about { background: #ffffff; }
 section.profiles#extracurriculars { background: #f6f0fc; }
-section.profiles#accomplishments { background: #ffffff; }
-section#stem-projects { background: #f6f0fc !important; }
-section.skills { background: #ffffff; }
-section#contact { background: #f6f0fc; }
+section.profiles#accomplishments { background: #f6f0fc; }
+section#stem-projects { background: #ffffff !important; }
+
+section#contact { background: #ffffff; }
 
 /* === Mobile "show older" toggle === */
 .show-older-btn {
@@ -397,9 +454,8 @@ section#contact { background: #f6f0fc; }
 <li class="smooth-menu"><a href="#welcome-hero">Home</a></li>
 <li class="smooth-menu"><a href="#about">About</a></li>
 <li class="smooth-menu"><a href="#extracurriculars">Experience</a></li>
-<li class="smooth-menu"><a href="#accomplishments">Accomplishments</a></li>
 <li class="smooth-menu"><a href="#stem-projects">STEM Projects</a></li>
-<li class="smooth-menu"><a href="#skills">Skills</a></li>
+<li class="smooth-menu"><a href="#accomplishments">Accomplishments</a></li>
 <li class="smooth-menu"><a href="#contact">Contact</a></li>
 
 
@@ -460,7 +516,9 @@ section#contact { background: #f6f0fc; }
 <!-- Clubs & Extracurriculars Section Start -->
 
 
-<section class="profiles" id="extracurriculars"><div class="profiles-details"><div class="section-heading text-center"><h2>Clubs &amp; Extracurriculars</h2></div><div class="container"><div class="profiles-content">
+<section class="profiles" id="extracurriculars"><div class="profiles-details"><div class="section-heading text-center"><h2>Experience</h2></div>
+<div class="container">
+<div class="profiles-content">
 <!-- School Leadership Timeline -->
 <div class="timeline-wrapper">
   <h3>School Leadership</h3>
@@ -497,7 +555,7 @@ section#contact { background: #f6f0fc; }
 <div class="timeline-block">
 <div class="timeline-icon"><i class="fa fa-globe"></i></div>
 <div class="timeline-content">
-<h4>Head Delegate and Conference Director</h4>
+<h4>Conference Director and Head Delegate</h4>
 <p>May 2026 – Present</p>
 </div>
 </div>
@@ -582,6 +640,76 @@ section#contact { background: #f6f0fc; }
 <button class="show-older-btn" onclick="toggleOlder(this)">Show older roles</button>
 </div>
 </div></div></div></section>
+<section id="stem-projects" class="portfolio">
+  <div class="portfolio-details">
+    <div class="section-heading text-center">
+      <h2>STEM Projects</h2>
+      <p>All of these projects are focused on improving human health.</p>
+    </div>
+
+    <div class="sp-grid">
+
+      <!-- Project 1: IEEE / ML (2026) -->
+      <div class="sp-card">
+        <div class="sp-header">
+          <div class="sp-meta">
+            <span class="sp-dates">2025&ndash;2026</span>
+          </div>
+        </div>
+        <h3 class="sp-title">
+          <a href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
+            A Machine Learning-Based Diagnostic Utility for Predicting Ertapenem Resistance in <em>Klebsiella Pneumoniae</em> Using MALDI-TOF MS Spectra
+          </a>
+        </h3>
+        <p class="sp-subtitle">Using mass spectrometry data and machine learning to detect antibiotic resistance faster than traditional methods.</p>
+        <ul class="sp-bullets">
+          <li class="sp-win">Published and Presented at IEEE CCWC 2026</li>
+          <li class="sp-win">1st Place, Biological Sciences, Golden Gate STEM Fair</li>
+          <li class="sp-win">Qualified to California State Science and Engineering Fair</li>
+          <li class="sp-more" style="display:none;">Developed a machine learning diagnostic approach to distinguish ertapenem-resistant and susceptible <em>K. pneumoniae</em> isolates using high-dimensional MALDI-TOF MS data</li>
+          <li class="sp-more" style="display:none;">Built models achieving 86&ndash;99% accuracy</li>
+          <li class="sp-more" style="display:none;">Built a complete data preprocessing and analysis pipeline including noise reduction, normalization, spectral alignment, and feature evaluation</li>
+          <li class="sp-more" style="display:none;">Applied data balancing techniques (SMOTE, ADASYN, class-weighting, undersampling)</li>
+          <li class="sp-more" style="display:none;">Assessed performance using stratified cross-validation, confusion matrices, precision, recall, and F1 score</li>
+          <li class="sp-more" style="display:none;">Developed a functional web application for more widespread usage</li>
+          <li class="sp-more" style="display:none;">Presented the research to experts in technology and biology</li>
+        </ul>
+        <button class="sp-toggle" onclick="toggleSPMore(this)" aria-expanded="false">Show more</button>
+        <div class="sp-tags">
+          <span>Python</span><span>Random Forest</span><span>Logistic Regression</span><span>K-Nearest Neighbors</span><span>Multi-Layer Perceptron</span><span>MALDI-TOF MS</span><span>SMOTE</span><span>Cross-validation</span>
+        </div>
+        <div class="sp-links">
+          <a href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer" class="sp-link primary"><i class="fa fa-external-link"></i> IEEE Publication</a>
+        </div>
+      </div>
+
+      <!-- Project 2: Celecoxib / Pharmacogenomics (2025) -->
+      <div class="sp-card">
+        <div class="sp-header">
+          <div class="sp-meta">
+            <span class="sp-dates">2024&ndash;2025</span>
+          </div>
+        </div>
+        <h3 class="sp-title">Genetic and Bioinformatics Analysis of Celecoxib: A CYP2C9-Focused Study</h3>
+        <p class="sp-subtitle">Investigating how genetic variants in CYP2C9 affect how the body metabolizes a common pain medication.</p>
+        <ul class="sp-bullets">
+          <li class="sp-win">3rd Place, Bioinformatics, Alameda County Science and Engineering Fair</li>
+          <li class="sp-more" style="display:none;">Designed and conducted an independent pharmacogenomics study examining how CYP2C9 genetic variants influence celecoxib metabolism and treatment risk</li>
+          <li class="sp-more" style="display:none;">Analyzed CYP2C9*2 and CYP2C9*3 genetic variants</li>
+          <li class="sp-more" style="display:none;">Explored genotype-phenotype relationships relevant to personalized medicine by analyzing sequence data and protein interactions</li>
+          <li class="sp-more" style="display:none;">Leveraged multiple bioinformatics tools to perform sequence alignment, predict variant impact, and interpret functional consequences</li>
+          <li class="sp-more" style="display:none;">Presented the research to experts in computational biology and bioinformatics</li>
+        </ul>
+        <button class="sp-toggle" onclick="toggleSPMore(this)" aria-expanded="false">Show more</button>
+        <div class="sp-tags">
+          <span>NCBI</span><span>PharmGKB</span><span>STRING</span><span>EMBOSS Water</span><span>dbSNP</span><span>PolyPhen-2</span><span>SIFT</span><span>Mutation-Taster</span><span>gnomAD</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="profiles" id="accomplishments">
    <div class="profiles-details">
     <div class="section-heading text-center">
@@ -639,6 +767,15 @@ section#contact { background: #f6f0fc; }
             <div class="single-profile">
               <div class="profile-txt">
                 <div class="profile-icon-name">
+                  <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Mayoral Recognition for Service on a City Board
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="single-profile">
+              <div class="profile-txt">
+                <div class="profile-icon-name">
                   <span class="year-badge" style="display:inline-block;margin-bottom:6px;">2025</span><br/>Research Award, Foothill Model United Nations
                 </div>
               </div>
@@ -662,6 +799,12 @@ section#contact { background: #f6f0fc; }
               </div>
             </div>
           </div>
+        </div><!-- /.row -->
+
+        <div class="profile-border"></div>
+
+        <!-- ===== Row 3: 2024 ===== -->
+        <div class="row">
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
@@ -671,12 +814,6 @@ section#contact { background: #f6f0fc; }
               </div>
             </div>
           </div>
-        </div><!-- /.row -->
-
-        <div class="profile-border"></div>
-
-        <!-- ===== Row 3: 2024 ===== -->
-        <div class="row">
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
@@ -704,6 +841,12 @@ section#contact { background: #f6f0fc; }
               </div>
             </div>
           </div>
+        </div><!-- /.row -->
+
+        <div class="profile-border"></div>
+
+        <!-- ===== Row 4: 2023 ===== -->
+        <div class="row">
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
@@ -713,12 +856,6 @@ section#contact { background: #f6f0fc; }
               </div>
             </div>
           </div>
-        </div><!-- /.row -->
-
-        <div class="profile-border"></div>
-
-        <!-- ===== Row 4: 2023 ===== -->
-        <div class="row">
           <div class="col-sm-3">
             <div class="single-profile">
               <div class="profile-txt">
@@ -734,161 +871,6 @@ section#contact { background: #f6f0fc; }
     </div><!-- /.container -->
   </div><!-- /.profiles-details -->
 </section>
-
-<!-- Replace your current STEM Projects section with this upgraded version -->
-<section id="stem-projects" class="portfolio">
-  <div class="portfolio-details">
-
-    <!-- Section Title -->
-    <div class="section-heading text-center">
-      <h2>STEM Projects</h2>
-      <p>All of these projects are focused on improving human health.</p>
-    </div>
-
-    <div class="projects-container">
-
-      <!-- Row 1: 2026 + 2025 -->
-      <div class="projects-row">
-
-        <!-- Project 4 (2026) -->
-        <div class="project-col">
-          <div class="project-card">
-            <iframe class="project-preview" src="ieee_ertapenem_ml.pdf"></iframe>
-
-            <div class="project-body">
-              <div class="meta-line">
-                <span class="year-badge">2026</span>
-              </div>
-
-              <a class="project-title" href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
-                A Machine Learning-Based Diagnostic Utility for Predicting Ertapenem Resistance in Klebsiella Pneumoniae Using MALDI-TOF MS Spectra
-              </a>
-
-              <p class="project-summary">
-                <strong>Awards:</strong> Selected for Publishing and Presenting, IEEE CCWC (Jan 2026); Qualified to California (State) Science and Engineering Fair; 1st Place Golden Gate STEM Fair<br>
-                <strong>Summary:</strong> Built lightweight models using MALDI-TOF MS spectra to predict ertapenem resistance in <em>Klebsiella pneumoniae</em> quickly and accurately. Logistic Regression, MLP, and Random Forest achieved test accuracies of 86%, 84%, and 78%, supporting faster, targeted treatment decisions without slow or expensive genomic workflows.
-              </p>
-
-              <div class="link-row">
-                <a class="pill-link primary" href="ieee_ertapenem_ml.pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-file-pdf-o"></i> View PDF
-                </a>
-                <a class="pill-link" href="https://doi.org/10.1109/CCWC67433.2026.11393853" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-external-link"></i> IEEE Publication
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 1 (2025) -->
-        <div class="project-col">
-          <div class="project-card">
-            <iframe class="project-preview" src="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf"></iframe>
-
-            <div class="project-body">
-              <div class="meta-line">
-                <span class="year-badge">2025</span>
-                <!-- <span class="tag">Bioinformatics</span>
-                <span class="tag">Pharmacogenomics</span>
-                <span class="tag">CYP2C9</span> -->
-              </div>
-
-              <a class="project-title" href="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf" target="_blank" rel="noopener noreferrer">
-                Genetic and Bioinformatics Analysis of Celecoxib: A CYP2C9-Focused Study
-              </a>
-
-              <p class="project-summary">
-                <strong>Awards:</strong> 3rd Place Alameda County Science and Engineering Fair<br>
-                <strong>Summary:</strong> Investigated how CYP2C9*2 and CYP2C9*3 variants affect celecoxib metabolism, highlighting genotype-guided dosing to improve patient safety and outcomes.
-              </p>
-
-              <div class="link-row">
-                <!-- <a class="pill-link primary" href="Genetic and Bioinformatics Analysis of Celecoxib Metabolism_ A CYP2C9-Focused Study (5).pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-file-pdf-o"></i> View PDF
-                </a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Row 2: 2024 + 2023 -->
-      <div class="projects-row">
-
-        <!-- Project 2 (2024) -->
-        <div class="project-col">
-          <div class="project-card">
-            <iframe class="project-preview" src="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf"></iframe>
-
-            <div class="project-body">
-              <div class="meta-line">
-                <span class="year-badge">2024</span>
-                <!-- <span class="tag">Sustainable Materials</span>
-                <span class="tag">Biopolymer</span>
-                <span class="tag">Textiles</span> -->
-              </div>
-
-              <a class="project-title" href="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf" target="_blank" rel="noopener noreferrer">
-                Sea to Style: Crafting Sustainable Seaweed Biofabrics
-              </a>
-
-              <p class="project-summary">
-                <strong>Awards:</strong> 2nd Place CSEF, 1st Place SMCOE STEM Fair<br>
-                <strong>Summary:</strong> Developed biodegradable seaweed-based fabrics to reduce toxic textile waste and improve environmental and human health impacts from conventional clothing production.
-              </p>
-
-              <div class="link-row">
-                <!-- <a class="pill-link primary" href="Sea to Style_ Crafting Sustainable Seaweed Biofabrics.pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-file-pdf-o"></i> View PDF
-                </a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Project 3 (2023) -->
-        <div class="project-col">
-          <div class="project-card">
-            <iframe class="project-preview" src="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf"></iframe>
-
-            <div class="project-body">
-              <div class="meta-line">
-                <span class="year-badge">2023</span>
-                <!-- <span class="tag">Health Tech</span>
-                <span class="tag">Radiation Safety</span>
-                <span class="tag">Consumer Devices</span> -->
-              </div>
-
-              <a class="project-title" href="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf" target="_blank" rel="noopener noreferrer">
-                The Shocking Truth About Smartphones and Internet Routers
-              </a>
-
-              <p class="project-summary">
-                <strong>Awards:</strong> Top 300 Thermo Fisher Scientific JIC, 1st Place SMCOE STEM Fair<br>
-                <strong>Summary:</strong> Measured electromagnetic radiation from smartphones and routers to support safer device habits and reduce potential health risks.
-              </p>
-
-              <div class="link-row">
-                <!-- <a class="pill-link primary" href="Suhani Bansal - 2023 SMCOE STEM FAIR PROJECT (EXPERIMENTAL TEMPLATE).pdf" target="_blank" rel="noopener noreferrer">
-                  <i class="fa fa-file-pdf-o"></i> View PDF
-                </a> -->
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- Clubs & Extracurriculars Section End -->
 <!-- Additional sections such as accomplishments, portfolio, contact, footer, etc. -->
  <!--
 <section id="portfolio" class="portfolio">
@@ -1004,32 +986,6 @@ section#contact { background: #f6f0fc; }
 
 <!-- STEM PROJECTS SECTION END -->
 
-<section class="skills" id="skills">
-<div class="skill-content">
-<div class="section-heading text-center">
-<h2>Skills & Interests</h2>
-</div>
-<div class="container">
-<div class="skill-chips-wrap">
-  <span class="skill-chip">Research &amp; Data Collection</span>
-  <span class="skill-chip">Public Speaking</span>
-  <span class="skill-chip">Design Thinking</span>
-  <span class="skill-chip">Computer Science</span>
-  <span class="skill-chip">Python</span>
-  <span class="skill-chip">Machine Learning</span>
-  <span class="skill-chip">Bioinformatics</span>
-  <span class="skill-chip">Statistics</span>
-  <span class="skill-chip">HTML &amp; CSS</span>
-  <span class="skill-chip">Data Analysis</span>
-  <span class="skill-chip">Leadership</span>
-  <span class="skill-chip">Facilitation</span>
-  <span class="skill-chip">Communication</span>
-  <span class="skill-chip">Note Taking</span>
-  <span class="skill-chip">Presentation Skills</span>
-</div>
-</div>
-</div><!-- /.skill-content-->
-</section><!--/.skills-->
 
 		<section id="contact" class="contact">
 			<div class="section-heading text-center">
@@ -1112,10 +1068,7 @@ section#contact { background: #f6f0fc; }
 											<h3>website</h3>
 											<a href="https://suhanibansal.com" target="_blank"><p class="github-link">www.suhanibansal.com</p></a>
 										</div>
-										<div class="single-contact-add-info">
-											<h3>GitHub</h3>
-											<a href="https://github.com/suhanibansal870/" target="_blank"><p class="github-link">https://github.com/suhanibansal870/</p></a>
-										</div>
+			
 										<div class="single-contact-add-info">
 											<h3>LinkedIn</h3>
 											<a href="https://www.linkedin.com/in/suhanibansal8/" target="_blank"><p class="github-link">linkedin.com/in/suhanibansal8</p></a>
@@ -1125,7 +1078,7 @@ section#contact { background: #f6f0fc; }
 								<div class="contact-icon-links">
 									<a href="mailto:suhanibansal633@gmail.com" title="Email"><i class="fa fa-envelope"></i></a>
 									<a href="https://www.linkedin.com/in/suhanibansal8/" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
-									<a href="https://github.com/suhanibansal870/" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+									
 								</div>
 							</div><!--/.single-contact-box-->
 						</div><!--/.col-->
@@ -1174,7 +1127,16 @@ section#contact { background: #f6f0fc; }
 <script src="assets/js/script.js"></script>
 <!-- Formspree jQuery submission -->
 <script>
-  $(document).ready(function () {
+  function toggleSPMore(btn) {
+  var card = btn.closest('.sp-card');
+  var items = card.querySelectorAll('.sp-more');
+  var expanded = btn.getAttribute('aria-expanded') === 'true';
+  items.forEach(function(el) { el.style.display = expanded ? 'none' : 'list-item'; });
+  btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  btn.textContent = expanded ? 'Show more' : 'Show less';
+}
+
+$(document).ready(function () {
     var $form = $('#contact-form');
     var $btn = $form.find('[type="submit"]');
     var $success = $('#form-success');
